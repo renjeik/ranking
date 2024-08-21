@@ -24,6 +24,9 @@ Note: The given command do not rebuilds the Docker images. It just reruns the do
 docker-compose up --build
 ```
 
+### Navigate to http://localhost:8000/companies
+- Once the development server is running, you can access the application by navigating to [http://localhost:8000/companies](http://localhost:8000/companies) in your web browser.
+
 ### Additional details
 - The command below shows the running Docker containers. Getting the running container's ID is essential for entering inside the container.
 ```
