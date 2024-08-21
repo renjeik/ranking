@@ -1,0 +1,121 @@
+  input[type=text] {
+    padding: 14px;
+    border-radius: 5px;
+    border: 1px solid hsl(186, 15%, 59%);
+    outline: none;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  label {
+    color: hsl(187, 24%, 22%);
+    font-size: 16px;
+  }
+
+  .star {
+    color: hsl(180, 1%, 37%);
+  }
+
+  .error {
+    color: hsl(0, 66%, 56%);
+    visibility: hidden;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body form {
+    margin: 100px auto;
+    padding: 30px 40px;
+    border-radius: 25px;
+    width: 50%;
+  }
+  body form h1 {
+    color: hsl(187, 24%, 22%);
+    margin-bottom: 20px;
+  }
+  body form .meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  body form .meta div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  body form .description {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0;
+  }
+  body form .description textarea {
+    border: 1px solid hsl(186, 15%, 59%);
+    outline: none;
+    width: 100%;
+    height: 160px;
+    resize: none;
+    margin: 15px 0;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  body form .description textarea:hover {
+    border-color: hsl(180, 1%, 37%);
+  }
+  body form input[type=submit] {
+    background-color: hsl(165, 5%, 33%);
+    width: 100%;
+    padding: 20px;
+    margin: 35px 0 0 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: hsl(148, 38%, 91%);
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+
+  input:hover {
+    border-color: hsl(180, 1%, 37%);
+  }
+
+  @media (max-width: 990px) {
+    body form {
+      width: 80%;
+    }
+  }
+  @media (max-width: 625px) {
+    body form {
+      width: 80%;
+    }
+    body form .meta {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  @media (max-width: 450px) {
+    body form {
+      width: 92%;
+      padding: 20px;
+      margin: 40px auto;
+      border-radius: 12px;
+    }
+    body form h1 {
+      font-size: 25px;
+    }
+    body form .meta {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    body form input[type=submit] {
+      padding: 15px;
+    }
+    input[type=text] {
+      padding: 11px;
+    }
+  }

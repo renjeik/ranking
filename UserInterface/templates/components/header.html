@@ -1,0 +1,29 @@
+{% load static %}
+<!--=============== HEADER ===============-->
+<header class="header">
+
+    <nav class="nav container">
+        <div class="nav__data">
+            <a href="#" class="nav__logo">
+                <img src="{% static '/media/svg/infineon-logo.svg' %}" />
+            </a>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line nav__burger"></i>
+                <i class="ri-close-line nav__close"></i>
+            </div>
+        </div>
+
+        <!--=============== NAV MENU ===============-->
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <!-- <li><a href="#" class="nav__link {% if active_nav == 'departments' %}active{% endif %}"">Departments</a></li> -->
+                <li><a href="{% url 'companiesView' %}" class="nav__link {% if active_nav == 'companies' %}active{% endif %}"">Companies</a></li>
+                <li><a href="{% url 'addCompanyView' %}" class="nav__link {% if active_nav == 'add_company' %}active{% endif %}"">Add a Company</a></li>
+
+                <li><a href="#" class=""></a></li>
+                <li><a href="#" class=""></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

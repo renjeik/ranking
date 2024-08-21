@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static '/css/pages/header/header-general.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+	<link href="{% static '/css/pages/dashboard/dashboard-general.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block title %}User{% endblock %}
+
+{% block content %}
+
+    {% block body %}
+
+    <header>
+        {% include 'components/header.html' %}
+    </header>
+
+    <div class="content section">
+		<div class="container">
+			{% if company %}
+				<h1>Company Details</h1>
+				<div>
+					<p><strong>Name:</strong> {{ company.name }}</p>
+					<p><strong>Location:</strong> {{ company.location }}</p>
+					<p><strong>Description:</strong> {{ company.description }}</p>
+				</div>
+			{% else %}
+				<p>No details found for the specified company.</p>
+			{% endif %}
+		</div>
+	</div>
+
+    {% endblock %}
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static '/js/pages/header/header-general.js' %}"></script>
+{% endblock %}

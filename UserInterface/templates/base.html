@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" direction="ltr" style="direction: ltr">
+
+<!--begin::Head-->
+<head>
+    <meta charset="utf-8"/>
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- <meta name="description" content="Login page example"/> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    {% block css %}{% endblock %}
+
+    <link rel="shortcut icon" href="{% static '/media/icons/favicon.ico' %}"/>
+</head>
+<!--end::Head-->
+
+{% block content %}{% endblock %}
+{% block js %}{% endblock %}
+
+</body>
+<!--end::Body-->
+</html>

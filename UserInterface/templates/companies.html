@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static '/css/pages/header/header-general.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+	<link href="{% static '/css/pages/dashboard/dashboard-general.css' %}" rel="stylesheet" type="text/css"/>
+	<script src="https://kit.fontawesome.com/513080e5af.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+    {% block body %}
+
+    <header>
+        {% include 'components/header.html' %}
+    </header>
+
+    <div class="content section">
+		<div class="container">
+			<h1>Companies</h1>
+			<div class="input-container b-radius-7">
+				<button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+				<input type="text" id="searchTerm" placeholder="Search term">
+			</div>
+			{% if data %}
+				<ul class="content-list square-bullets">
+					{% for company in data %}
+						<li>
+							<a href="{% url 'companyDetailView' name=company.name %}" target="_blank"><div>{{ company.name }}</div></a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			<input type="hidden" id="rankCompaniesUrlInput" value="{% url 'rankCompanies' %}">
+			<input type="hidden" id="rankCompaniesViewUrlInput" value="{% url 'rankCompaniesView' %}">
+		</div>
+	</div>
+
+    {% endblock %}
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static '/js/pages/header/header-general.js' %}"></script>
+	<script src="{% static '/js/pages/company/company-general.js' %}"></script>
+{% endblock %}

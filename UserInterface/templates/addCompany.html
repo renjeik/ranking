@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static '/css/pages/header/header-general.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+	<link href="{% static '/css/pages/dashboard/dashboard-general.css' %}" rel="stylesheet" type="text/css"/>
+	<link href="{% static '/css/pages/company/company-general.css' %}" rel="stylesheet" type="text/css"/>
+
+{% endblock %}
+
+{% block title %}Add Company{% endblock %}
+
+{% block content %}
+
+    {% block body %}
+
+    <header>
+        {% include 'components/header.html' %}
+    </header>
+
+    <form>
+		<h1>Add Company</h1>
+		<div class="meta">
+		  <div class="name">
+			<label for="company-name">Company Name <span class="star">*</span></label>
+			<input type="text" id="company-name">
+			<span class="error">This field is required</span>
+		  </div>
+		  <div class="location">
+			<label for="location-name">Location <span class="star">*</span></label>
+			<input type="text" id="location-name">
+			<span class="error">This field is required</span>
+		  </div>
+		</div>
+
+		<div class="description">
+		  <label for="description">Description <span class="star">*</span></label>
+		  <textarea name="description" id="description"></textarea>
+		  <span class="error">This field is required</span>
+		</div>
+
+		<input type="submit" value="Submit">
+
+		<input type="hidden" id="companiesViewUrlInput" value="{% url 'companiesView' %}">
+		<input type="hidden" id="addCompanyUrlInput" value="{% url 'addCompany' %}">
+	</form>
+
+	<div id="hiddenFormContainer" style="display: none;"></div>
+
+    {% endblock %}
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static '/js/pages/header/header-general.js' %}"></script>
+	<script src="{% static '/js/pages/company/add-company-general.js' %}"></script>
+{% endblock %}

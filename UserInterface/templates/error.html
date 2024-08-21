@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+	<link href="{% static '/css/pages/error/error-general.css' %}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block title %}Error{% endblock %}
+
+{% block content %}
+
+    {% block body %}
+
+	{% if code and message %}
+		<div class="content">
+			<div class="container">
+				<h1>{{ code }}</h1>
+				<p>{{ message }}</p>
+			</div>
+		</div>
+	{% else %}
+		<div class="content">
+			<div class="container">
+				<h1>500</h1>
+				<p>BAD GATEWAY</p>
+			</div>
+		</div>
+	{% endif %}
+
+    {% endblock %}
+
+{% endblock %}

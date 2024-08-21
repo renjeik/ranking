@@ -1,0 +1,11 @@
+.venv/
+venv/
+**/migrations/*.*
+!**/migrations/__init__.py
+.idea/
+.vscode/
+.vs/
+.env
+db.sqlite3
+*.pyc
+credentials

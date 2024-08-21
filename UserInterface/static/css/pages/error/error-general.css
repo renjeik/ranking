@@ -1,0 +1,43 @@
+.container h1 {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative; }
+
+h1 {
+  font-size: 30vh;
+}
+
+.content {
+  padding: 195px 0px 70px 0px;
+  overflow-x: hidden;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #8c8c8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1118px) {
+  .content {
+    padding: 95px 0px 70px 0px;
+    overflow-x: hidden; }
+}
+
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .content {
+    padding: 55px 0px 70px 0px;
+    overflow-x: hidden; }
+
+  h1 {
+    font-size: 15vh;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1118px) {
+  .content {
+    padding: 155px 0px 70px 0px;
+    overflow-x: hidden; }
+}

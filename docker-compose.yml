@@ -1,0 +1,35 @@
+# TODO: pip install mysqlclient is necessary. Slim image has problems with it. Will try Buster and Ubuntu
+
+version: "3.8"
+
+services:
+  # service backend can reach to service mysql-db via hostname mysql-db
+  # changes for db service's name should be reflected to wait.sh file
+  mysql-db:
+    image: mysql:8.0
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+    env_file: .env
+    ports:
+      - "3306:3306"
+
+  backend:
+    build:
+      context: .
+      dockerfile: Compose.Dockerfile
+    env_file: .env
+    restart: always
+    #volumes:
+    #  - .:/usr/src/app
+    entrypoint: ["./wait.sh"]
+    depends_on:
+      - mysql-db
+    working_dir: "/usr/src/app"
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
+
+volumes:
+  mysql_data:
