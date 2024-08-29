@@ -43,6 +43,10 @@ Problem wait.sh was not found. Error in CRLF.
 ```
 git config --global core.autocrlf false
 ```
+and if you are developing on Windows and your Docker container is a Linux environment, there may be an issue with line endings (CRLF vs. LF). Scripts created on Windows might have the wrong line endings for Unix environments. Thus, use dos2unix to convert the file format.
+```
+dos2unix wait.sh
+```
 - Django migrations can sometimes be problematic. Changing lots of columns/tables and creating migrations will cause problems (Django checks the updated columns/tables and wants to make the changes according to SQL rules). If stucked, one can delete the migrations folder, drop the tables and go to django_migrations table and drop the previous migrations' rows. The last one is essential since Django thinks it did the migration if a row exists for that migration in that table (This is not the best way to deal with migration problems. This README will be updated after determining suitable migration pipelines for both development and production).
 - You can install your favourite HTTP client (Postman is suggested but Postman desktop app is heavy) and DB client (Datagrip is suggested) for testing purposes.
 
